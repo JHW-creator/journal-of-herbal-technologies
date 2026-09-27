@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Journal of Herbal Technologies">
+  <circle cx="24" cy="24" r="23" fill="#E4EDE3" stroke="#2F5D3A" stroke-opacity="0.2" stroke-width="1"/>
+  <path d="M24 38c0-10 6-16 14-20-2 12-8 18-14 20Z" fill="#2F5D3A" opacity="0.9"/>
+  <path d="M24 38c0-12-7-18-14-22 3 13 8 19 14 22Z" fill="#2F5D3A" opacity="0.65"/>
+  <path d="M24 38V14" stroke="#F4F7F2" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M24 22c3-2 6-3 9-3M24 28c-3-2-6-3-9-3" stroke="#F4F7F2" stroke-width="1.25" stroke-linecap="round" opacity="0.55"/>
+</svg>
