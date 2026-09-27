@@ -3,8 +3,22 @@ export const siteShortName = "JHT";
 export const siteTagline =
   "Advancing Science, Technology and Innovation in Herbal Research";
 export const siteDomain = "journalofherbaltechnologies.com";
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? `https://${siteDomain}`;
+
+/** Prefer explicit env, then Vercel URL, then future custom domain. */
+function resolveSiteUrl() {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/\/$/, "")}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`;
+  }
+  return `https://${siteDomain}`;
+}
+
+export const siteUrl = resolveSiteUrl();
 export const siteEmail = "journalofherbaltechnologies@gmail.com";
 
 export const primaryNav = [
