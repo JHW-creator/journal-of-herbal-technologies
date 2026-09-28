@@ -37,6 +37,22 @@ export default function SubmissionPage() {
           ))}
         </ul>
       </Section>
+
+      <div className="prose-jht mt-10">
+        <p>
+          Submissions are accepted via email at our official email id:{" "}
+          <a
+            href="mailto:journalofherbaltechnologies@gmail.com"
+            className="font-medium text-green-forest hover:underline"
+          >
+            journalofherbaltechnologies@gmail.com
+          </a>
+        </p>
+        <p>
+          Submissions should be made with the completed checklist, manuscript
+          and figures in jpg format separately.
+        </p>
+      </div>
     </ContentPage>
   );
 }
