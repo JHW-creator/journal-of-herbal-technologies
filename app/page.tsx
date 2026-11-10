@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { editorial } from "@/content/editorial";
 import { home } from "@/content/home";
 import { homeMetadata } from "@/content/seo";
 import { siteName, siteTagline } from "@/content/site";
@@ -35,6 +37,39 @@ export default function HomePage() {
             <Button asChild size="lg" variant="soft" className="w-full sm:w-auto">
               <Link href="/articles">Explore Articles</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-green-deep text-primary-foreground">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/25 pb-3">
+            <p className="text-base font-semibold sm:text-lg">
+              {editorial.leadership[0].role}
+            </p>
+            <Link
+              href="/editorial-board"
+              className="text-sm underline-offset-4 hover:underline"
+            >
+              View full editorial board
+            </Link>
+          </div>
+          <div className="mt-5 flex items-center gap-4">
+            <Image
+              src={editorial.leadership[0].image}
+              alt={editorial.leadership[0].imageAlt}
+              width={72}
+              height={72}
+              className="size-16 shrink-0 rounded-full object-cover sm:size-[4.5rem]"
+            />
+            <div>
+              <p className="text-base font-semibold sm:text-lg">
+                {editorial.leadership[0].name}, {editorial.leadership[0].details[0]}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-primary-foreground/90">
+                {editorial.leadership[0].details[1]}
+              </p>
+            </div>
           </div>
         </div>
       </section>

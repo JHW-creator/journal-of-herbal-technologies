@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import {
   ContentPage,
@@ -61,18 +60,19 @@ export default function ContactPage() {
 
         <article className="rounded-2xl border border-border bg-card p-6">
           <h2 className="font-display text-2xl font-semibold">
-            {contact.institutional.title}
+            {contact.publisher.title}
           </h2>
-          <p className="mt-3 font-display text-lg">
-            {contact.institutional.name}
+          <p className="mt-4 text-sm text-muted-foreground">
+            {contact.publisher.body}
           </p>
-          <p className="mt-6 text-sm">
-            <Link
-              href="/about#institutional-association"
-              className="text-green-forest hover:underline"
-            >
-              Institutional Association
-            </Link>
+          <p className="mt-1 text-base font-medium text-foreground">
+            {contact.publisher.name}
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            {contact.publisher.addressLabel}
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-foreground">
+            {contact.publisher.address}
           </p>
         </article>
       </div>

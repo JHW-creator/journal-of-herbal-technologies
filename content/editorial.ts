@@ -11,7 +11,7 @@ export const editorial = {
     "The editorial structure of JHT is designed to provide clear scientific responsibility while supporting multidisciplinary coverage.",
   leadership: [
     {
-      role: "Editor-in-Chief",
+      role: "Editor in Chief",
       name: "Dr Vandana Jain",
       details: [
         "Ph.D(Tech)",
@@ -21,7 +21,7 @@ export const editorial = {
       imageAlt: "Dr Vandana Jain",
     },
     {
-      role: "Co-Editor-in-Chief",
+      role: "Co-Editor in Chief",
       name: "Dr. Yogendra Pal",
       details: [
         "Ph.D., M.Pharm (Pharmaceutical Chemistry)",
@@ -112,7 +112,7 @@ export const editorial = {
         "NOVITIOUS PHARMACEUTICAL PRIVATE LIMITED",
         "821/810, 8th Floor, Sun Gravitas, Nr. Shyamal Cross Road, Ahmedabad 380015, Gujarat, India",
       ],
-      image: "/brand/Editor/Editor-tech.jpeg",
+      image: "/brand/Editor/tech-editor.jpeg",
       imageAlt: "Raj Mishra",
     },
     {
@@ -122,7 +122,7 @@ export const editorial = {
         "Medical Content Writer & Editorial Coordinator",
         "Paradigm Infocom Private Ltd, Sai Sadan Apt, Janmbhoomi Marg, Fort, Mumbai, Maharashtra, India.",
       ],
-      image: "/brand/Editor/tech-editor.jpeg",
+      image: "/brand/Editor/Editor-tech.jpeg",
       imageAlt: "Krishna Prajapati",
     },
   ] satisfies BoardPerson[],
