@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Fraunces } from "next/font/google";
+import { Figtree } from "next/font/google";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -13,16 +13,6 @@ const figtree = Figtree({
   variable: "--font-figtree",
   display: "swap",
   weight: ["400", "500", "600", "700"],
-  preload: true,
-  adjustFontFallback: true,
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
   preload: true,
   adjustFontFallback: true,
 });
@@ -85,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.variable} ${fraunces.variable} flex min-h-screen flex-col`}
+        className={`${figtree.variable} flex min-h-screen flex-col`}
       >
         <JsonLd />
         <Header />

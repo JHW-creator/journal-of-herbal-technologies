@@ -1,45 +1,63 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
-import { IllustBoardEmpty } from "@/components/illustrations/EmptyStates";
 import {
   ContentPage,
   PageHeader,
   Section,
 } from "@/components/layout/PageChrome";
-import { editorial } from "@/content/editorial";
+import { editorial, type BoardPerson } from "@/content/editorial";
 
 export const metadata: Metadata = { title: "Editorial Board" };
+
+function PersonCard({ person }: { person: BoardPerson }) {
+  return (
+    <article className="flex flex-col items-center rounded-xl border border-border bg-card px-5 py-6 text-center">
+      <Image
+        src={person.image}
+        alt={person.imageAlt}
+        width={160}
+        height={160}
+        className="size-36 rounded-full object-cover sm:size-40"
+      />
+      <p className="mt-5 text-xs font-semibold tracking-[0.12em] text-green-forest uppercase">
+        {person.role}
+      </p>
+      <h3 className="mt-2 text-xl font-semibold text-foreground">{person.name}</h3>
+      <div className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+        {person.details.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
+    </article>
+  );
+}
 
 export default function EditorialBoardPage() {
   return (
     <ContentPage>
       <PageHeader title="Editorial Board" lead={editorial.intro} />
 
-      <IllustBoardEmpty className="mb-10 max-w-lg" />
-
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {editorial.roles.map((role) => (
-          <article
-            key={role.title}
-            className="rounded-xl border border-border bg-card p-6"
-          >
-            <h2 className="font-display text-xl font-semibold sm:text-2xl">
-              {role.title}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {role.body}
-            </p>
-          </article>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {editorial.leadership.map((person) => (
+          <PersonCard key={person.name} person={person} />
         ))}
       </div>
 
-      <Section title="Founding Publisher">
-        <ul className="font-display text-xl">
-          {editorial.foundingPublishers.map((name) => (
-            <li key={name}>{name}</li>
+      <Section title="Editorial Board Members" wide>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {editorial.members.map((person) => (
+            <PersonCard key={person.name} person={person} />
           ))}
-        </ul>
-        <p className="mt-4">{editorial.foundingNote}</p>
+        </div>
+      </Section>
+
+      <Section title="Managing and Technical Editor" wide>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {editorial.managing.map((person) => (
+            <PersonCard key={person.name} person={person} />
+          ))}
+        </div>
       </Section>
 
       <Section title="Editorial Independence">
